@@ -1,0 +1,17 @@
+<div class="item">
+    <a (click)="navigateToDetails(item.id)">
+        <img src="{{item.image}}" alt="">
+        <div class="body">
+            <h4>{{item.title}}</h4>
+            <p>{{item.description}}</p>
+        </div>
+    </a>
+    <div class="px-3 mb-2 d-flex justify-content-between align-itms-center">
+        <button class="btn btn-success" *ngIf="!addButton" (click)="addButton=true" >Add to Cart</button>
+        <div class="d-flex w-50" *ngIf="addButton">
+            <input type="number" class="form-control" [(ngModel)]="amount">
+            <button class="btn btn-danger" (click)="add()">Add</button>
+        </div>
+        <span>{{item.price}}£</span>
+    </div>
+</div>
